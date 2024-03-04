@@ -1,0 +1,66 @@
+Réagir à crochets
+
+Les crochets ont été ajoutés à React dans la version 16.8.
+
+Les crochets permettent aux composants de fonction d'avoir accès à des caractéristiques d'état et à d'autres caractéristiques React. De ce fait, les composants de classe ne sont généralement plus nécessaires.
+
+Bien que les crochets remplacent généralement les composants de classe, il n'est pas prévu de supprimer les classes de React.
+Qu'est-ce qu'un crochet ?
+
+Les crochets nous permettent de "crocheter" dans des caractéristiques de React telles que les méthodes de l'état et du cycle de vie.
+Exemple:
+Obtenez votre propre serveur React.js
+
+Voici un exemple de crochet. Ne vous inquiétez pas si ça n'a pas de sens. Nous allons entrer dans les détails dans la section suivante.
+
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("red");
+
+  return (
+    <>
+      <h1>My favorite color is {color}!</h1>
+      <button
+        type="button"
+        onClick={() => setColor("blue")}
+      >Blue</button>
+      <button
+        type="button"
+        onClick={() => setColor("red")}
+      >Red</button>
+      <button
+        type="button"
+        onClick={() => setColor("pink")}
+      >Pink</button>
+      <button
+        type="button"
+        onClick={() => setColor("green")}
+      >Green</button>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<FavoriteColor />);
+
+Tu dois importCrochets de react.
+
+Nous utilisons ici le useStateCrochet pour suivre l'état d'application.
+
+L'État se réfère généralement aux données d'application ou aux propriétés qui doivent être suivies.
+Règles du crochet
+
+Il y a trois règles pour les crochets:
+
+    Les crochets ne peuvent être appelés qu'à l'intérieur des composants de la fonction React.
+    Les crochets ne peuvent être appelés qu'au niveau supérieur d'un composant.
+    Les crochets ne peuvent pas être conditionnels
+
+Remarque: Les crochets ne fonctionneront pas dans les composants de la classe React.
+Crochets personnalisés
+
+Si vous avez une logique sensée qui doit être réutilisée dans plusieurs composants, vous pouvez construire vos propres crochets personnalisés.
+
+Nous allons entrer dans les détails dans la section Custom Hooks.
